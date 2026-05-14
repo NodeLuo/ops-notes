@@ -19,7 +19,7 @@
 
 ```bash
 1.语法结构
-	a.查找文件类型
+	a.文件类型查找
 		find 路径 -type 类型
 		类型参数：
 			f 普通文件
@@ -32,17 +32,28 @@
 			#查看当前目录下所有普通文件
 			find ./ -type f
 			
-	b. 查找文件名称
+	b.文件名称查找
 		find 路径 -name "文件名/目录名"
 		find 路径 -iname "文件名/目录名" 忽略名称大小写
 		模糊查找：
 			*   匹配任意多个字符（包括0个）
 			?   匹配任意1个字符
 			[]  匹配括号内任意一个字符
+			{}  匹配序列中任意一个
 		
 		示例：
 			[root@breadbomb ~]# find ./ -name "a.txt"
 			./a.txt
 			./example/a.txt
+			
+			# 查找 file1、file2、file3
+			find . -name "file[123]"
+			
+			#查找 fileaaa、filebbb、fileccc
+			find . -name "file{aaa,bbb,ccc}"
+			
+	c.文件修改时间查找
+		find 路径 -mtime 
+
 
 ```
