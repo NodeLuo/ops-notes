@@ -90,7 +90,11 @@
 			G 吉     1G = 1024M
 			
 		示例：
-		find . -size 
+		#查找10M的文件和目录
+		find . -size 10M
+		find . -size +10M
+		find . -size -10M
+		
 
 
 2.综合运用
