@@ -122,7 +122,8 @@
 
 ```bash
 1.删除查找到的文件或目录
-	find . -name "*.txt" | xargs rm -rf
+	find . -name "*.txt" | xargs rm -r
 	解析：
 		xargs 可以将前面结果放置到结尾，类似于xargs rm -rf a.txt b.txt ...
+		xargs 后面的命令别名失效,即rm 不等于 rm -i
 ```
