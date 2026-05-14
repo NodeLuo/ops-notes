@@ -53,7 +53,21 @@
 			find . -name "file{aaa,bbb,ccc}"
 			
 	c.文件修改时间查找
-		find 路径 -mtime 
+		find 路径 -mtime 时间     查找规定时间内修改文件内容的文件
+		时间类型：
+			num   前第num天
+			-num  num天内
+			+num  num天前
+			
+		示例：
+		# 查找 7天内 修改过的文件 
+		find . -type f -mtime -7 
+		
+		# 查找 7天前 改过，最近没动过的文件 
+		find . -type f -mtime +7 
+		
+		# 查找 刚好第3天 修改的文件 
+		find . -type f -mtime 3
 
 
 ```
