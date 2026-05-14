@@ -11,6 +11,14 @@
 	33M	/etc
 
 2.df 查看磁盘分区
-	-i 查看inode号码
+	-i 查看目录inode号码     ll -i 查看文件inode号码
 	-h 人性化显示
+```
+
+2、find 命令
+
+```bash
+1.语法结构
+	find 路径 类型
+	
 ```
