@@ -92,12 +92,14 @@
 		示例：
 		#查找10M的文件和目录
 		find . -size 10M
+		#查找大于10M的文件和目录
 		find . -size +10M
+		#查找小于10M的文件和目录
 		find . -size -10M
 		
 
 
 2.综合运用
-	find 路径 -type 类型 -name "文件名/目录名" -mtime 修改时间
+	find 路径 -type 类型 -name "文件名/目录名" -mtime 修改时间 -size 大小+单位
 
 ```
