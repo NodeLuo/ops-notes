@@ -135,5 +135,15 @@
 3.-exec实现
 	find . -name "a.txt" -exec rm {} \;
 	解析：
+		-exec 是find的参数，将找到的文件执行指定的命令
+		-exec {} 将找到的文件结果放入{}中
+		;结尾是-exec所必须的，\;需要转义，
+		分号默认是命令的分隔符，现在需要的是一个普通分号
 		
+		比如：
+			[root@breadbomb ~]# echo ;
+			
+			[root@breadbomb ~]# echo \;
+			;
+
 ```
