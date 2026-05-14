@@ -33,9 +33,10 @@
 			
 	b. 查找文件名称
 		find 路径 -name "文件名/目录名"
+		模糊查找：
+		
 		
 		示例：
-			查看当前目录下所有的啊。
 			[root@breadbomb ~]# find ./ -name "a.txt"
 			./a.txt
 			./example/a.txt
