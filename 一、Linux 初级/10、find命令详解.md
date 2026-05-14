@@ -118,17 +118,22 @@
 	find . -size -5M -or -size +10M （-or不可省略 可简写-o）
 ```
 
-3、find结果与其他命令结合使用（分为两类命令）
+3、find结果与其他命令结合使用
 
 ```bash
-1.删除查找到的文件或目录（结尾类）
+1.删除查找到的文件或目录
 	find . -name "*.txt" | xargs rm -r
 	解析：
 		xargs 可以将前面结果放置到结尾，类似于xargs rm -rf a.txt b.txt ...
 		xargs 后面的命令别名失效,即rm 不等于 rm -i
 		
-2.复制查找到的文件或目录（指定位置类）
+2.复制查找到的文件或目录
 	find . -name "a.txt" | xargs -i cp {} /opt/
 	解析：
 		xargs -i 将前面结果插入到{}中，相当于cp a.txt /opt/
+		
+3.-exec实现
+	find . -name "a.txt" -exec rm {} \;
+	解析：
+		
 ```
