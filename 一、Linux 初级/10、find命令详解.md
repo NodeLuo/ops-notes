@@ -15,7 +15,7 @@
 	-h 人性化显示
 ```
 
-2、find 命令
+	2、find 命令 （find默认是递归查找）
 
 ```bash
 1.语法结构
@@ -101,5 +101,18 @@
 
 2.综合运用
 	find 路径 -type 类型 -name "文件名/目录名" -mtime 修改时间 -size 大小+单位
+	
+	注意：同一种参数可多次使用
+	#查找当前目录下大于5M小于10M的文件
+	find . -size +5M -size -10M
+	等价于
+	find . -size +5M -and -size -10M (省略了-and 可简写-a)
+	
+	#查找当前目录下小于5M或大于10M的文件
+	find . -size -5M -size +10M
+	等价于
+	find . -size -5M -or -size +10M （省略了-or 可简写-o）
+	
+	
 
 ```
