@@ -126,4 +126,8 @@
 	解析：
 		xargs 可以将前面结果放置到结尾，类似于xargs rm -rf a.txt b.txt ...
 		xargs 后面的命令别名失效,即rm 不等于 rm -i
+		
+	find . -name "a.txt" | xargs -i cp {} /opt/
+	解析：
+		xargs -i 将前面结果插入到{}中，相当于cp a.txt /opt/
 ```
