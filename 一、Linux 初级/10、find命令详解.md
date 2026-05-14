@@ -10,4 +10,7 @@
 	[root@breadbomb ~]# du -sh /etc
 	33M	/etc
 
+2.df 查看磁盘分区
+	-i 查看inode号码
+	-h 人性化显示
 ```
