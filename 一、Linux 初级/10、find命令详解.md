@@ -115,9 +115,7 @@
 	find . -size +5M -and -size -10M (省略了-and 可简写-a)
 	
 	#查找当前目录下小于5M或大于10M的文件
-	find . -size -5M -size +10M
-	等价于
-	find . -size -5M -or -size +10M （省略了-or 可简写-o）
+	find . -size -5M -or -size +10M （-or不可省略 可简写-o）
 	
 	
 
