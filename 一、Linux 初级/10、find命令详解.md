@@ -15,7 +15,7 @@
 	-h 人性化显示
 ```
 
-	2、find 命令 （find默认是递归查找）
+2、find 命令 （find默认是递归查找）
 
 ```bash
 1.语法结构
@@ -116,7 +116,13 @@
 	
 	#查找当前目录下小于5M或大于10M的文件
 	find . -size -5M -or -size +10M （-or不可省略 可简写-o）
-	
-	
+```
 
+3、find结果与其他命令结合使用
+
+```bash
+1.删除查找到的文件或目录
+	find . -name "*.txt" | xargs rm -rf
+	解析：
+		xargs 可以将前面结果放置到结尾，类似于xargs rm -rf a.txt b.txt ...
 ```
