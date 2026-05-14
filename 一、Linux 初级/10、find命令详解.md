@@ -78,9 +78,13 @@
 		find . -type f -mtime 3
 		
 	d.文件大小查找
-		find 路径 -size 大小
+		find 路径 -size 大小+单位
 		大小类型：
-			
+			num
+		单位类型：
+			c 字节 1c =
+			k 千字节
+			M 兆
 
 
 2.综合运用
