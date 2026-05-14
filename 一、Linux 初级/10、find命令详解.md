@@ -78,4 +78,8 @@
 		find . -type f -mtime 3
 
 
+
+2.综合运用
+	find 路径 -type 类型 -name "文件名/目录名" -mtime 修改时间
+
 ```
