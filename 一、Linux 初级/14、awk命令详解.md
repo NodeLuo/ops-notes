@@ -14,6 +14,8 @@
 	（1）awk 默认输出每一行
 	（2）awk 默认支持扩展正则
 	（3）awk 是逐行执行的
+	（4） 所有字符串在awk中都被视作变量，除非加上双引号
+		awk '{print $1"\t"$2}' a.txt
 
 1.语法格式
 	awk 参数 '模式{动作}' 文件名
@@ -37,7 +39,7 @@
 		# 定义变量 
 		awk -v name="linux" '{print name,$1}' test.txt
 
-3.awk内置全局变量
+3.awk内置全局变量 （逗号，内置变量，表示空格）
 	（1）行
 		NR         当前总行数，多文件累计行数
 		FNR        单个文件行号，每个文件重新计数
@@ -68,7 +70,10 @@
 		aaaa:bbb:ccc
 		aaaa:bbb:ccc
 		
-		#
+		#输出多列，逗号是内置变量，表示空格
+		[root@breadbomb ~]# awk -F: '/aaa/{print $1,$2}' a.txt
+		aaaa bbb
+
 
 4.三大代码块
 
