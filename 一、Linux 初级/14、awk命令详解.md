@@ -73,6 +73,9 @@
 		#输出多列，逗号是内置变量，表示空格
 		[root@breadbomb ~]# awk -F: '/aaa/{print $1,$2}' a.txt
 		aaaa bbb
+		
+		#输出总列号
+		
 
 
 4.三大代码块
