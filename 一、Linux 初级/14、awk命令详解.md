@@ -67,6 +67,8 @@
 		[root@breadbomb ~]# awk 'FNR==2' a.txt b.txt
 		aaaa:bbb:ccc
 		aaaa:bbb:ccc
+		
+		#
 
 4.三大代码块
 
