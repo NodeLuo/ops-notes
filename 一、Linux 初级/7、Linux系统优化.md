@@ -36,5 +36,8 @@
 
 3.wc #统计
 	语法：
-		wc 
+		wc filename
+	操作：
+		（1）直接执行wc filename ,输出：行数 单词数 字节数 文件名
+		（2）-l 统计hang
 ```
