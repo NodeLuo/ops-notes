@@ -75,7 +75,21 @@
 		aaaa bbb
 		
 		#输出总列号
+		[root@breadbomb ~]# awk '{print NF}' a.txt
+		1
+		3
+		1
+		1
 		
+		#输出最后一列内容
+		[root@breadbomb ~]# awk '{print $NF}' a.txt
+		www.baidu.com
+		ccc
+		dddbb
+		ccccc
+		
+
+
 
 
 4.三大代码块
