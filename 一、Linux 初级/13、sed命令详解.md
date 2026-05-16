@@ -55,6 +55,9 @@
 		# 删除包含error的行 
 		sed '/error/d' test.txt
 		
+		# 区间删除 aaa行和ccc行区间
+		sed '/aaa/,/ccc/d' test.txt
+		
 	
 	（2）筛选打印 （sed会默认打印所有行，筛选后p再打印，所以需要-n取消默认行为）
 		# 只显示3-8行 
