@@ -47,5 +47,18 @@
 		OFS        输出字段分隔符，默认空格
 		RS         输入行分隔符，默认换行
 		ORS        输出行分割符，默认换行
+	
+	示例：
+		#输出第二行
+		[root@breadbomb ~]# awk 'NR==2' a.txt
+		aaaa:bbb:ccc
+		
+		#单文件于多文件行数区别
+		[root@breadbomb ~]# awk 'NR==2' a.txt b.txt
+		aaaa:bbb:ccc
+		[root@breadbomb ~]# awk 'FNR==2' a.txt b.txt
+		aaaa:bbb:ccc
+		aaaa:bbb:ccc
+
 
 ```
