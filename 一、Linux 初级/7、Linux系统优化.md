@@ -182,8 +182,10 @@
 
 6.关闭NetworkManager
 
-7.修改默认的YUM仓库
-
+7.修改默认的YUM仓库 （sl cowsay 娱乐性软件）
+	使用：
+		cowsay "内容"
+		sl #直接回车
 8.字符集优化
 
 9.xshell连接优化
