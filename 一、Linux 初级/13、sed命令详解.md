@@ -65,7 +65,8 @@
 		# 不包含fail的行 
 		sed -n '/fail/!p' test.txt
 		
-		# 筛选行区间 （若有重复的cc,就以后面的为准）
+		# 筛选行区间
+		注意：多个区间符合都输出，未闭合则输出到结尾
 		[root@breadbomb ~]# sed -n '/^aa/,/cc/p' ./a.txt
 		aaaa
 		bbbbb
