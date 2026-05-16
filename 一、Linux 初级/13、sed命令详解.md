@@ -34,6 +34,39 @@
 		i 忽略大小写
 		2 只替换第二个匹配内容
 
+示例：
+	（1）删除操作
+		# 删除空行 
+		sed '/^$/d' test.txt 
+		
+		# 删除注释行（#开头） 
+		sed '/^#/d' test.txt 
+		
+		# 删除第3行 
+		sed '3d' test.txt 
+		
+		# 删除2到6行 
+		sed '2,6d' test.txt 
+		
+		# 删除最后一行 
+		sed '$d' test.txt 
+		
+		# 删除包含error的行 
+		sed '/error/d' test.txt
+		
+	
+	（2）筛选打印
+		# 只显示3-8行 
+		sed -n '3,8p' test.txt 
+		
+		# 只显示包含success的行 
+		sed -n '/success/p' test.txt 
+		
+		# 不包含fail的行 
+		sed -n '/fail/!p' test.txt
+	
+	（2）
+
 5.作用：
 	a.模糊过滤文件内容
 	b.查找指定行
