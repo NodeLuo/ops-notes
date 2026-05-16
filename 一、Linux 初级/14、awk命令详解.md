@@ -23,8 +23,9 @@
 	-- 结束参数，文件以-开头时使用
 	
 	示例：
-		# 冒号为分隔符 
-		awk -F: '{print $1}' /etc/passwd 
+		# 冒号为分隔符
+		#一行中以冒号为分隔符，分割出多段，$1取第一段
+		awk -F: '{print $1}' /etc/passwd
 		# 定义变量 
 		awk -v name="linux" '{print name,$1}' test.txt
 
