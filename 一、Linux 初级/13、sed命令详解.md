@@ -90,6 +90,9 @@
 		# 单行第一个替换 ，每行只替换第一个
 		sed 's/aaa/bbb/' test.txt 
 		
+		# 替换为空，删除
+		sed 's/aaa//g' test.txt
+		
 		# 整行全部全局替换 
 		sed 's/aaa/bbb/g' test.txt 
 		
