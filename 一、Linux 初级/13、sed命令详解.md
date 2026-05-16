@@ -55,7 +55,7 @@
 		sed '/error/d' test.txt
 		
 	
-	（2）筛选打印
+	（2）筛选打印 （sed会默认打印所有行，筛选后p再打印，所以需要-n取消默认行为）
 		# 只显示3-8行 
 		sed -n '3,8p' test.txt 
 		
@@ -66,7 +66,11 @@
 		sed -n '/fail/!p' test.txt
 		
 		# 筛选行区间
-	
+		[root@breadbomb ~]# sed -n '/^aa/,/cc/p' ./a.txt
+		aaaa
+		bbbbb
+		ccccc
+
 	（2）
 
 5.作用：
