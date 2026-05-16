@@ -64,6 +64,8 @@
 		
 		# 不包含fail的行 
 		sed -n '/fail/!p' test.txt
+		
+		# 筛选行区间
 	
 	（2）
 
