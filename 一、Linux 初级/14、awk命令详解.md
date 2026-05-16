@@ -14,6 +14,11 @@
 
 1.语法格式
 	awk 参数 '模式{动作}' 文件名
+	
+	示例：
+		awk '/root/' a.txt  默认有print
+		等价于
+		awk '/root/{print}' a.txt
 
 2.参数
 	-F 输入指定字段分隔符
