@@ -121,6 +121,10 @@
 		
 		# 包含hello的行，将aaa替换成bbb
 		sed '/hello/s#aaa#bbb#g'
+	
+	（7）sed 后向引用
+		语法结构：
+			sed s#()()()#\1\2\3#g
 
 5.作用：
 	a.模糊过滤文件内容
