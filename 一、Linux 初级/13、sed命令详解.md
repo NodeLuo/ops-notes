@@ -66,8 +66,8 @@
 		sed -n '/fail/!p' test.txt
 		
 		# 筛选行区间
-		注意：多个区间符合都输出，未闭合则输出到结尾
-		[root@breadbomb ~]# sed -n '/^aa/,/cc/p' ./a.txt
+		注意：多个区间符合都输出，未闭合则输出到结尾，但必须先匹配开头
+		[root@breadbomb ~]# sed -n '/aa/,/cc/p' ./a.txt
 		aaaa
 		bbbbb
 		ccccc
