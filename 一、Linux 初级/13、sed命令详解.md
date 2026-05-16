@@ -2,7 +2,7 @@
 1、sed命令
 
 ```bash
-1.sed 参数
+1.sed 参数  注意：sed 操作默认不修改原文件
 	-n 只输出匹配到的行
 	-i 直接修改原文件
 	-i.bak 修改原文件，自动生成备份文件
@@ -72,7 +72,40 @@
 		bbbbb
 		ccccc
 
-	（3）
+	（3）插入、追加、替换整行
+		# 第2行前面插入内容 
+		sed '2i新增内容' test.txt 
+		
+		# 匹配行后面追加内容 
+		sed '/test/a追加一行文字' test.txt 
+		
+		# 替换第5行整行内容 
+		sed '5c全新整行内容' test.txt
+	
+	（4）替换操作
+		# 单行第一个替换 
+		sed 's/aaa/bbb/' test.txt 
+		
+		# 整行全部全局替换 
+		sed 's/aaa/bbb/g' test.txt 
+		
+		# 忽略大小写全局替换 
+		sed 's/aaa/bbb/gi' test.txt 
+		
+		# 直接修改原文件 
+		sed -i 's/aaa/bbb/g' test.txt 
+		
+		# 修改+备份原文件 
+		sed -i.bak 's/aaa/bbb/g' test.txt 
+		
+		# 路径替换（换分隔符避免/冲突） 
+		sed 's|/home|/root|g' test.txt
+	
+	（5）行收尾操作
+		# 所有行开头加字符 
+		sed 's/^/前缀_/' test.txt 
+		# 所有行结尾加字符 
+		sed 's/$/_后缀/' test.txt
 
 5.作用：
 	a.模糊过滤文件内容
