@@ -91,6 +91,10 @@
 		ccccc
 		
 		#多种分隔符
+		[root@breadbomb ~]# cat a.txt
+		aaaa:/bbb:ccc
+		[root@breadbomb ~]# awk -F "[:/]+" '{print $2,$3}' a.txt
+		bbb ccc
 		
 		
 
