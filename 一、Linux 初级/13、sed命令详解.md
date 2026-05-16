@@ -125,6 +125,10 @@
 	（7）sed 后向引用
 		语法结构：
 			sed s#()()()#\1\2\3#g
+			
+			[root@breadbomb ~]# sed -nE 's#(aaa)#<\1>#gp' a.txt
+			<aaa>a
+
 
 5.作用：
 	a.模糊过滤文件内容
