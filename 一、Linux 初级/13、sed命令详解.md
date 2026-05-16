@@ -86,7 +86,7 @@
 		# 替换第5行整行内容 
 		sed '5c全新整行内容' test.txt
 	
-	（4）替换操作
+	（4）替换操作 s///g  s###g  s|||g
 		# 单行第一个替换 ，每行只替换第一个
 		sed 's/aaa/bbb/' test.txt 
 		
@@ -117,6 +117,9 @@
 	（6）模式+动作
 		# 第三行替换hello为world
 		sed '3s/hello/world/g' test.txt
+		
+		# 包含hello的行，将aaa替换成bbb
+		sed '/hello/s#aaa#bbb#g'
 
 5.作用：
 	a.模糊过滤文件内容
