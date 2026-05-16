@@ -61,6 +61,16 @@
 	参数：
 		-n2 按照两列展示
 
+7.systemctl #系统服务操作
+	操作：
+		systemctl stop 服务    #停止服务
+		systemctl start 服务   #开启服务
+		systemctl restart 服务 #重启服务
+		systemctl enable 服务  #开机自启服务
+		systemctl disable 服务 #开机禁止自启服务
+		systemctl status 服务  #查看服务状态
+		systemctl reload 服务  #重新加载服务
+		
 ```
 
 3、系统优化
@@ -88,13 +98,87 @@
 
 
 2.查看系统的内核版本
+	（1）uname -a 显示所有内核信息
+	（2）uname -r 显示内核版本
+	
+	示例：
+		[root@breadbomb ~]# uname -a
+		Linux breadbomb 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+		
+		[root@breadbomb ~]# uname -r
+		3.10.0-1160.el7.x86_64
+
 
 
 3.系统时间同步
+	时间分为系统时间和硬件时间，两种时间必须一致
+	（1）系统时间
+		date #查看系统时间
+		
+		修改时间：
+			date -s 20200101 #将时间修改成2020年1月1日
+		
+		显示自定义格式时间：
+			[root@breadbomb ~]# date +%F-%H-%M-%S
+			2026-05-16-21-42-33
+		
+		同步系统时间：
+			ntpdate #同步时间 需要安装 yum -y install ntpdate
+			
+			ntpdate ntp1.aliyun.com #使用阿里云时间服务器进行同步
+		
+		
+	（2）硬件时间
+		clock #查看硬件时间
+		
+		同步硬件时间：
+			hwclock #同步时间
+				-w  #将系统时间同步给硬件时间
+			
+			hwclock -w #系统时间同步给硬件时间
+
 
 4.关闭Selinux
+	Selinux 作用：限制root管理员，需要关闭，并且有《信息安全问题》
+	
+	Selinux 会开机自启，需要临时+关闭开机自启
+	
+	（1）查看Selinux
+		getenforce #查看Selinux
+	（2）临时关闭Selinux
+		setenforce 1 | 0 # 1表示开启（Enforcing） 0表示关闭（Permissive）
+		setenforce 0
+		
+		关闭后使用getenforce 查看是否为 Permissive
+	（3）关闭开机启动
+		/etc/selinux/config
+		
+		将下面的修改成disabled
+			#SELINUX=enforcing
+			SELINUX=disabled
+
 
 5.关闭firewalld
+	作用：流量限制 流量分析 攻击行为
+	
+	（1）查看防火墙状态
+		systemctl status firewalld
+	
+	（2）临时关闭防火墙
+		systemctl stop firewalld
+	
+	（3）禁止开机自动启动
+		systemctl disable firewalld
+	
+	什么时候开启防火墙：
+		a.公网
+		b.用户可直接访问的服务器 NAT转换 DMZ映射
+		c.有公网的云服务器
+	什么时候关闭防火墙：
+		a.局域网
+		b.没有公网IP
+		c.内部测试服务器
+		d.高并发场景
 
 6.关闭NetworkManager
 
