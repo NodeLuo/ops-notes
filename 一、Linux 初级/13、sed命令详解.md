@@ -113,6 +113,10 @@
 		sed 's/^/前缀_/' test.txt 
 		# 所有行结尾加字符 
 		sed 's/$/_后缀/' test.txt
+	
+	（6）模式+动作
+		# 第三行替换hello为world
+		sed '3s/hello/world/g' test.txt
 
 5.作用：
 	a.模糊过滤文件内容
