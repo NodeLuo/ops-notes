@@ -114,7 +114,12 @@
 	}' file
 	
 	示例：
-	
+	[root@breadbomb ~]# awk 'BEGIN{print "开始"}{print $1}END{print "结束"}' a.txt
+	开始
+	aaaa:/bbb:ccc
+	1
+	结束
+
 
 5.模式类型
 	（1）空模式 匹配所有行
