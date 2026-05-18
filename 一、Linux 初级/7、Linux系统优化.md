@@ -183,7 +183,24 @@
 6.关闭NetworkManager
 
 7.修改默认的YUM仓库 （sl cowsay 娱乐性软件）
+	（1）更换阿里云仓库
+		a.备份
+			mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+		b.安装
+			curl -o /etc/yum.repos.d/CentOS-Base.repohttps://mirrors.aliyun.com/repo/Centos-7.repo
+		c.查看
+			yum repolist
+
+	（2）配置 EPEL 仓库
+		a.安装
+			curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+		b.清除缓存
+			yum clean all && yum makecache
+		c.查看
+			yum repolist | grep epel   # 输出示例：epel/x86_64     Extra Packages
+
 	使用：
+		yum -y install cowsay sl
 		cowsay "内容"
 		sl #直接回车
 8.字符集优化
