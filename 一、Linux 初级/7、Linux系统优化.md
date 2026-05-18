@@ -191,9 +191,9 @@
 		c.查看
 			yum repolist
 
-	（2）配置 EPEL 仓库
+	（2）配置 EPEL 仓库 （wget需要提前安装）
 		a.安装
-			curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+			wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
 		b.清除缓存
 			yum clean all && yum makecache
 		c.查看
