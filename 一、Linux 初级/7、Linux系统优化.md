@@ -187,7 +187,7 @@
 		a.备份
 			mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 		b.安装
-			curl -o /etc/yum.repos.d/CentOS-Base.repohttps://mirrors.aliyun.com/repo/Centos-7.repo
+			curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 		c.查看
 			yum repolist
 
