@@ -203,6 +203,7 @@
 		yum -y install cowsay sl
 		cowsay "内容"
 		sl #直接回车
+
 8.字符集优化
 
 9.xshell连接优化
